@@ -1,0 +1,22 @@
+<header>
+    <div class="welcome">Welcome <h2> {{this.user}}</h2></div>
+    <button (click)="logout()">Logout</button>
+</header>
+<div class="auctions">
+    <div class="container">
+        <div class="car" *ngFor="let car of this.cars">
+            <img src="{{car.image}}" alt="">
+            <div class="car-details">
+                <p><span>Model:</span> {{car.name}}</p>
+                <p><span>First registration: </span>{{car.firstRegistration}}</p>
+                <p><span>Mileage In KM:</span> {{car.mileage}}</p>
+                <p><span>Fuel type: </span>{{car.fuelType}}</p>
+                <p><span>Transmission:</span> {{car.transmission}}</p>
+                <p><span>Current highest bid:</span> {{car.highestBid}}€</p>
+                <p><span>Remaining time:</span> {{car.remainingTime}}</p>
+                <p id="bidder-true" *ngIf="car.amIHighestBidder">I'm the highest bidder</p>
+                <p id="bidder-false" *ngIf="!car.amIHighestBidder">I'm not the highest bidder</p>
+            </div>
+        </div>    
+    </div>
+</div>
